@@ -23,7 +23,7 @@ function receiveData(renderData) {
             <h1 class="textcolor">${data.date}</h1>
             <h2 class="textcolor">${data.title}</h2>
             <img src="${data.hdurl}" class="imagesize" onclick="openImage(this.src)"/>
-            <div>${data.explanation}</div>
+            <div class="paragraphFormat">${data.explanation}</div>
         </div>
 
         <div id="fullscreen-image-container" class="fullscreen-container" onclick="closeImage()">
