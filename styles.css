@@ -6,7 +6,7 @@ body {
 }
 
 body {
-    background-image: url("images/astronomy.jpg");
+    background-image: url("images/space_background.jpg");
     background-color: black;
     background-position: center;
     background-size: cover;
@@ -32,7 +32,7 @@ body {
     padding: 10px;
     font-size: 1.1rem;
     font-family: 'Trebuchet MS', sans-serif;
-    border: none;
+    border: 1px solid white;
     border-radius: 15px;
     background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
     color: white;
@@ -57,7 +57,8 @@ body {
     color: white;
     font-size: 2.5rem;
     font-family: 'Trebuchet MS', sans-serif;
-    text-shadow: 2px 2px 4px #000;
+    color: #fff;
+    text-shadow: 0 0 0px #ffffff, 0 0 6px #ffffff;
 }
 
 .dayofspace {
@@ -76,7 +77,8 @@ body {
 
 .dayofspace h1,
 .dayofspace h2 {
-    display: block; /* Stack vertically */
+    animation: fadeIn 1s ease-out;
+    display: block;
     text-align: center;
     background-color: white;
     border-radius: 10px;
@@ -84,7 +86,7 @@ body {
     margin: 10px auto;
     color: black;
     padding: 10px;
-    width: fit-content; /* Optional: keeps it tight */
+    width: fit-content;
 }
 
 .dayofspace div {
@@ -95,6 +97,7 @@ body {
 }
 
 .imagesize {
+    animation: fadeIn 1s ease-out;
     max-width: 100%;
     height: auto;
     max-height: 400px;
@@ -135,11 +138,24 @@ body {
     cursor: pointer;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
 .paragraphFormat {
-    font-family: Cambria, Cochin, Georgia, Times;
-    color: black;
-    margin: 0%;
-    border: 1px solid white;
-    padding: 10px;
-    background-color:hsl(0, 0%, 48%);
+    animation: fadeIn 1s ease-out;
+    font-family: 'Georgia', Cambria, 'Times New Roman', serif;
+    color: #f0f0f0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 30px auto;
+    line-height: 1.7;
+    font-size: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(4px);
 }
