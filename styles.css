@@ -74,15 +74,17 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.dayofspace h1, h2 {
-    display: inline-block;
+.dayofspace h1,
+.dayofspace h2 {
+    display: block; /* Stack vertically */
+    text-align: center;
     background-color: white;
-    background-position: fixed;
     border-radius: 10px;
     font-size: 32px;
-    margin-bottom: 0px;
+    margin: 10px auto;
     color: black;
     padding: 10px;
+    width: fit-content; /* Optional: keeps it tight */
 }
 
 .dayofspace div {
