@@ -145,8 +145,7 @@ body {
     margin: 0px auto;
     padding: 20px;
     background-color: transparent;
-    border: 2px solid #000000;
-    border-radius: 8px;
+    border: none;
     text-align: center;
 }
 
