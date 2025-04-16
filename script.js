@@ -53,4 +53,15 @@ function closeImage() {
 
 }
 
+// Cover Screen Fade-Out
+document.addEventListener("DOMContentLoaded", () => {
+  const cover = document.getElementById("cover-screen");
+  const enterBtn = document.getElementById("enter-button");
+
+  enterBtn.addEventListener("click", () => {
+    cover.classList.add("fade-out");
+    setTimeout(() => cover.remove(), 1500); // matches transition
+  });
+});
+
 
