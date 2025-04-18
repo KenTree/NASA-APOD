@@ -7,6 +7,19 @@ const NASA_API_KEY = "qMRxpcXWQcmuMA74tpHqY7EAp2J4BVvsES27oc0p";
 function clicked() {
 
   let date = document.getElementById("user-input").value;
+  const selectedDate = new Date(date);
+  const earliestDate = new Date("1995-06-16");
+  const today = new Date()
+  today.setHours(0, 0, 0, 0);
+
+  if (selectedDate < earliestDate) {
+    alert("Data is only available from June 16, 1995 onward.");
+    return;
+  }
+  if (selectedDate > today) {
+    alert("Select a date within our time range, not in the future :)")
+    return;
+  }
 
   fetch(
     `https://api.nasa.gov/planetary/apod?api_key=qMRxpcXWQcmuMA74tpHqY7EAp2J4BVvsES27oc0p&date=${date}`)
@@ -18,6 +31,7 @@ function receiveData(renderData) {
   // Log all data that is entered for debugging
   console.log(renderData);
   let data = renderData
+
   document.getElementById("article-output").innerHTML = `
         <div class ="dayofspace">
             <h1 class="textcolor">${data.date}</h1>
