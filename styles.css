@@ -17,7 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 999;
+    z-index: 9999;
     transition: opacity 1.5s ease;
   }
 
@@ -34,7 +34,7 @@ body {
     text-align: center;
     opacity: 0;
   }
-  
+
   .cover-image {
     margin: 0;
     padding: 0;
@@ -44,7 +44,7 @@ body {
     position: absolute;
     z-index: -1;
   }
-  
+
   #enter-button {
     animation: fadeIn 2s ease-out forwards;
     padding: 14px 32px;
@@ -57,24 +57,24 @@ body {
     z-index: 1;
     transition: background 0.3s ease;
   }
-  
+
   #enter-button:hover {
     background-color: white;
     color: black;
   }
-  
+
   #cover-screen.fade-out {
     opacity: 0;
     pointer-events: none;
   }
-  
+
   /* Main Page Styling */
   .header-text {
     text-align: center;
     color: white;
     margin-top: 30px;
   }
-  
+
   .center-boxes {
     display: flex;
     justify-content: center;
@@ -242,4 +242,9 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease-in-out;
     backdrop-filter: blur(4px);
+}
+
+/* Prevent scrolling when cover screen is active */
+body.cover-active {
+    overflow: hidden;
 }

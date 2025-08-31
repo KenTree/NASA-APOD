@@ -50,7 +50,7 @@ function receiveData(renderData) {
 // Open Image and Close Image Functions
 function openImage(imgSrc) {
 
-  // We assigned the IDs when we receiveData on line 29-32 
+  // We assigned the IDs when we receiveData on line 29-32
   const container = document.getElementById("fullscreen-image-container");
   const image = document.getElementById("fullscreen-image");
 
@@ -72,10 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const cover = document.getElementById("cover-screen");
   const enterBtn = document.getElementById("enter-button");
 
+  // Add cover-active to body to prevent scrolling
+  document.body.classList.add("cover-active");
+
   enterBtn.addEventListener("click", () => {
     cover.classList.add("fade-out");
-    setTimeout(() => cover.remove(), 1500); // matches transition
+    setTimeout(() => {
+      cover.remove();
+      document.body.classList.remove("cover-active"); // Restore scrolling
+    }, 1500); // matches transition
   });
 });
-
-
